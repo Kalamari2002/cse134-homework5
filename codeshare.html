@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CodeShare</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="portfolio, game, design, development, programming, coding, gamedev, c#, unity, godot, game jams, visual art, animation, drawing">
+    <meta name="description" content="CS major at UCSD who loves coding, designing and playing games! Take a look at the games I made, and the one I'm currently working on. Enjoy your stay!">
+    
+    <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav>
+        <h2>Gabriel Ikezaki - Game Dev Portfolio</h2>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="devlog.html">Dev Log</a>
+            </li>
+            <li>
+                <a href="mygames.html">My Games</a>
+            </li>
+            <li>
+                <a href="about.html">About Me</a>
+            </li>
+            <li>
+                <a href="lab.html">Lab</a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Code Share</h1>
+    <p>
+        I was thinking I could maybe use this page to share some pieces of code I wrote, and maybe even relate it to the
+        suggestions form. Since I'm learning GDscript, this could be somewhat useful in getting advice on how to improve
+        Godot scripting.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Been struggling with how <code>move_and_collide()</code> works. Do I have to multiply it by <code>delta</code>? <del>no</del> <ins>Here's what
+        the documentation says:</ins>
+    </p>
+    <pre>
+        This method takes one required parameter: a Vector2 indicating the body's relative movement. 
+        Typically, this is your velocity vector multiplied by the frame timestep (delta). If the engine detects a collision 
+        anywhere along this vector, the body will immediately stop moving. If this happens, the method will return a 
+        KinematicCollision2D object.
+    </pre>
+    <cite>Taken from <a href="https://docs.godotengine.org/en/stable/tutorials/physics/using_character_body_2d.html">Godot Official Documentation</a></cite>
+    <p><dfn>delta</dfn> here is the time difference between the current frame and the last.</p>
+    <dialog open>Psssst if you wanna take a look at some early builds of my current project, check out my Github link below</dialog>
+    <br>
+    <br>
+    <hr>
+    <footer>
+        <address>
+            Author: Gabriel Ikezaki<br> 
+            San Diego, CA<br>
+            USA
+         </address>
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/gabriel-ikezaki/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+                <a href="https://github.com/Kalamari2002" target="_blank">Github</a>
+            </li>
+            <li>
+                <a href="https://k4lamari.itch.io/" target="_blank">Itch.io Page</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gikezaki/profilecard/?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a>
+            </li>
+        </ul>
+      </footer>
+</body>
+</html>

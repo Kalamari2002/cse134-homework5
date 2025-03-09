@@ -1,0 +1,207 @@
+@font-face{
+    font-family: Quicksand;
+    src: url('../fonts/Quicksand/Quicksand-Regular.ttf');
+}
+@font-face{
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+@font-face{
+    font-family: MontserratBoldItalic;
+    src: url('../fonts/Montserrat/static/Montserrat-BoldItalic.ttf');
+}
+@font-face{
+    font-family: MontserratExtraBold;
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+}
+@font-face{
+    font-family: MontserratLight;
+    src: url('../fonts/Montserrat/static/Montserrat-Light.ttf');
+}
+
+:root{
+    
+    --background-color: rgb(238, 236, 207);
+    --game-entry-background-color: rgb(216, 213, 162);
+    --normal-font-color: color-mix(in hsl, hsl(0, 8%, 15%), rgb(52, 51, 42) 35%);
+    --link-font-color: rgb(164, 107, 38);
+    --footer-background-color: rgb(225, 221, 178);
+    --invalid-background-color:rgb(180, 84, 84);
+    --required-color:rgb(221, 67, 67);
+
+    --paragraph-font-family: Quicksand;
+    --seg-title-font-family: MontserratBoldItalic;
+    --page-title-font-family: MontserratExtraBold;
+    --large-font-family: MontserratLight;
+
+    --nav-item-padding: 20px;
+
+    --landscape-gallery-row-gap:4dvh;
+    --gallery-default-col-gap:10dvw;
+    --gallery-landscape-col-gap:6dvw;
+
+    --mobile-game-margin-top:10%;
+    --item-margin-bottom: 4%;
+    --segment-margin-top:2%;
+    --default-gap:2%;
+
+    --desktop-input-height:40px;
+    --desktop-textarea-height:150px;
+
+    --page-title-font-size: 46px;
+    --seg-title-font-size: 36px;
+    --game-title-font-size:28px;
+    --paragraph-font-size: 24px;
+    --mobile-paragraph-font-size: 20px;
+    --mobile-footer-font-size: 18px;
+    --mobile-nav-font-size: 16px;
+
+    --desktop-game-width: 500px;
+    --mobile-game-width: 350px;
+
+    /*toggle variables*/
+    --slider-relative-size: 50%;
+    --slider-border-width: 6px;
+    --switch-width:100px;
+    --switch-height:50px;
+
+    --image-width-modifier: 0.9;
+    --game-entry-padding-modifier: 0.05;
+    
+    --long-text-width: 75ch;
+    --medium-text-width: 50ch;
+    --latest-text-width: 30ch;
+    --short-text-width: 25ch;
+
+    --fade-in-default-time: 2s;
+    --introduction-animation-delay: 1.2s;
+    --quick-transition-time: 0.5s;
+
+    --zoomin-scale : 1.1;
+}
+
+@keyframes fade-out {
+    0% { opacity: 1;}
+    75% { opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes flash {
+    0% {background-color: var(--invalid-background-color);}
+    100% {background-color: var(--normal-font-color);}
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--paragraph-font-family), Helvetica;
+    background-color: var(--background-color);
+    color: var(--normal-font-color)
+}
+
+.switch{
+    width: var(--switch-width);
+    height:var(--switch-height);
+    position:relative;
+    display: inline-block;
+    border-style: solid;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--normal-font-color);
+    border: solid var(--background-color) var(--slider-border-width);
+    width: var(--slider-relative-size);
+}
+input:checked + .slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    background-color: var(--normal-font-color);
+    border: solid var(--background-color) 6px;
+    width: 50%;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: var(--normal-font-color);
+    padding:var(--default-gap)
+}
+form label{
+    font-size: var(--paragraph-font-size);
+}
+
+*[required]{
+    border: solid var(--required-color);
+}
+
+input {
+    margin-bottom: 1%;
+    height: var(--desktop-input-height);
+    width: 50%;
+
+    background-color: var(--normal-font-color);
+    
+    color:var(--background-color);
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--normal-font-color);
+}
+
+input[type="submit"]{
+    font-size: var(--paragraph-font-size);
+    width: 25%;
+}
+
+input:user-invalid{
+    -animation: flash 1s;
+    background-color: var(--invalid-background-color);
+}
+
+output[class="error"]{
+    color: var(--invalid-background-color);
+    opacity: 0;
+}
+input:user-invalid ~ output[class="error"]{
+    opacity: 1;
+}
+
+textarea{
+    margin-bottom: var(--default-gap);
+    background: var(--normal-font-color);
+    color: var(--background-color);
+    font-family: var(--paragraph-font-family);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--normal-font-color);
+
+    font-size: var(--paragraph-font-size);
+    height: var(--desktop-textarea-height);
+    width: 90%;
+}
+textarea:user-invalid{
+    -animation: flash 1s;
+    background-color: var(--invalid-background-color);
+}

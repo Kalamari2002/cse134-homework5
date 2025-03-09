@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="./styles/form.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="portfolio, game, design, development, programming, coding, gamedev, c#, unity, godot, game jams, visual art, animation, drawing">
+    <meta name="description" content="CS major at UCSD who loves coding, designing and playing games! Take a look at the games I made, and the one I'm currently working on. Enjoy your stay!">
+    <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <br>
+    <form action="https://httpbin.org/post" method="POST">
+        <div class="field name-field">
+            <label for="contact-name">Name</label><br>
+            <input type="text" id="contact-name" name="contact-name" placeholder="Jane Doe" minlength="1" maxlength="50" pattern="[A-Za-z .]+" tabindex="1">
+            <output class="info" name="name-info-output" for="contact-name">0/50</output><br>
+            <output class="error" name="name-error-output" for="contact-name">Please only include letters, spaces and periods in your name.</output>
+        </div>
+        <br>
+        <div class="field email-field">
+            <label for="contact-email">Email *</label><br>
+            <input type="email" id="contact-email" name="contact-email" placeholder="example@gmail.com" maxlength="320" required tabindex="2">
+            <output class="info" name="email-info-output" for="contact-email">0/320</output><br>
+            <output class="error" name="email-error-output" for="contact-email">Please insert a valid email.</output>
+        </div>
+        <br>
+        <div class="field comments-field">
+            <label for="comments">Comments *</label><br>
+            <textarea id="comments" name="comments" placeholder="Bugs, features, balance changes" rows="4" cols="50" maxlength="500" required tabindex="3"></textarea>
+            <output class="info" name="comments-info-output" for="comments">0/500</output><br>
+            <output class="error" name="comments-error-output" for="comments">Please don't incldude invalid characters.</output><br>
+        </div>
+        <br>
+        <input type="hidden" name="possible_bot" value="true" >
+        <input type="submit" onclick="ValidateInputs()">
+    </form>
+    <script src="./scripts/validation.js"></script>
+    <script>
+        const lightStyleSrc = "./styles/form-lightmode.css";
+        const darkStyleSrc = "./styles/form.css";
+
+        const styleLink = document.querySelector("link");
+
+        if(localStorage.getItem('ToggleMode') == null){
+            console.log("No Data");
+            switchToDarkMode();
+        }else{
+            if(localStorage.getItem('ToggleMode') == 'dark'){
+                switchToDarkMode();
+            }else if(localStorage.getItem('ToggleMode') == 'light'){
+                switchToLightMode();
+            }
+        }
+
+        function switchToLightMode(){
+            styleLink.href = lightStyleSrc;
+            localStorage.setItem('ToggleMode', 'light');
+        }
+        function switchToDarkMode(){
+            styleLink.href = darkStyleSrc;
+            localStorage.setItem('ToggleMode', 'dark');
+        }
+    </script>
+
+</body>
+</html>

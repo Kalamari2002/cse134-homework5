@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Devlog</title>
+    <link rel="stylesheet" href="./styles/devlog.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="portfolio, game, design, development, programming, coding, gamedev, c#, unity, godot, game jams, visual art, animation, drawing">
+    <meta name="description" content="CS major at UCSD who loves coding, designing and playing games! Take a look at the games I made, and the one I'm currently working on. Enjoy your stay!">
+    <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2>Gabriel Ikezaki - Game Dev Portfolio</h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="devlog.html">DevLog</a>
+            </li>
+            <li>
+                <a href="mygames.html">Games</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="form.html">Form</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <span class="mode-toggle" hidden>
+        <img src="./images/icons/moon_icon_darkmode.png" alt="moon-icon" width="50px">
+        <label class="switch">
+            <input type="checkbox" disabled>
+            <span class="slider"></span>
+        </label>
+        <img src="./images/icons/sun_icon_darkmode.png" alt="sun-icon" width="50px">
+    </span>
+    <hgroup class="introduction">
+        <h1>Devlog: From the Brink (working title)</h1>
+        <p>
+            A turn-based PvP game which I'm developing in Godot, based on a D&D campaign that I'm playing with some close friends. 
+            This is my first PvP game, and it's also my first Godot project. Not only that, but across all the different genres
+            that I explored, I've never developed a turn-based game. 
+            <br>
+            <br>
+            First time experiences all around in this project, and that's exactly
+            why I'm so passionate about it. Working on this game has been one of the most valuable learning experiences as a dev, both technically
+            and creatively. In this devlog, I share the challenges, achievements and thought processes that sprouted from this game. 
+        </p>
+    </hgroup>
+    <article class="devlog-entry" title="entry-2" id="log-entry-2">
+        <header>
+            <h2>Entry #2</h2>
+            <h3>Update: Completed Aspen's Core Moveset!</h3>
+            <p>Jan 31, 2025</p>
+        </header>
+        <p>
+            The core moveset of the first character, Aspen, is done! I've been working on this character for a while now, and I'm 
+            happy with how their kit's turning out so far. My goal is to release a very early build of the game with 3 (one for each
+            archetype) characters so I can get some people testing the game feel and balance. Before I started working on Aspen, I 
+            created an outline for which characters I would develop first:
+        </p>
+        <ol>
+            <li>Aspen</li>
+            <li>Raouss</li>
+            <li>Mival</li>
+            <li>Akamien</li>
+            <li>Poko</li>
+            <li>Sothro</li>
+        </ol>
+        <p> 
+            Aspen's kit is done, so, if I stick to this outline, Raouss will be the next in development. But in any case, I made
+            a showcase video for my friends, and will share it here as well cause why not. All of the assets you'll see in the footage 
+            below are placeholders, but polish aside the first Aspen's basic moveset is done!
+        </p>
+        <iframe width="720" height="415" src="https://www.youtube.com/embed/LrtLagYpvW8?si=rUSM_M0Q9G2-af3b" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+        <br>
+        <details>
+            <summary>Who's Aspen?</summary>
+            <p>
+                Aspen is one of the player character who joined the campaign after the other players. D&D lets players pick 
+                one or even multiple classes that have their own skills, specialties and identities. While most of us committed to a 
+                single class, Aspen is unique among our party members in that they are both a Fighter and a Wizard. This means that 
+                they can do a little bit of everything really, from kicking ass in close-quarter brawls, to sniping unsuspecting 
+                foes from afar and casting spells. That versatility was, to me, one of the most defining traits of the character, 
+                and that became the driving inspiration for their range of different projectiles. A really cool thing that I found 
+                out about Aspen in the campaign is that they have this ability called "Bladesong", which makes them extra speedy
+                and <em>really</em> hard to pin down. I knew I just had to reference that in the game somehow, and that's when I had the
+                idea of shifting the game's flow to Aspen's POV. Instead of asking what Aspen would look like under the effects of 
+                this "Bladesong", I started asking how would everything else look to them. The answer: everything would probably look
+                hella slow. 
+            </p>
+        </details>
+        <p>
+            I haven't thought of a moveset for all characters, but I do have some ideas for their base stats, namely Health and Agility.
+            Below you can take a look at how I'm planning the base of all characters.
+        </p>
+        <table>
+            <caption><b>Character Base Stats<b></caption>
+            <colgroup>
+                <col span="4">
+            </colgroup>
+            <tr>
+                <th>Character</th>
+                <th>Archetype</th>
+                <th>Health</th>
+                <th>Agility</th>
+            </tr>
+            <tr>
+                <td>Akamien</td>
+                <td>Skirmisher</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Aspen</td>
+                <td>Skirmisher</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Mival</td>
+                <td>Arcanist</td>
+                <td>90</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Poko</td>
+                <td>Arcanist</td>
+                <td>90</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Raouss</td>
+                <td>Brawler</td>
+                <td>130</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Sothro</td>
+                <td>Brawler</td>
+                <td>110</td>
+                <td>25</td>
+            </tr>
+        </table>
+        <aside>
+            <p>
+                Agility determines how quickly a character can change their position after moving to a quadrant. Everytime a character
+                moves to a quadrant, there's a brief moment where they can't move again. I call this "end-lag", where 
+            </p>
+            <blockquote>
+                <i>End-Lag = 1/Agility seconds</i>
+            </blockquote>
+            <p>
+                Characters with higher Agility have less end-lag, meaning moving to a quadrant isn't as much of a commitment and they can 
+                dodge attacks more easily.
+            </p>
+        </aside>
+    </article>
+
+    <article class="devlog-entry" title="entry-1" id="log-entry-1">
+        <header>
+            <h2>Entry #1</h2>
+            <h3>Prologue</h3>
+            <p>Jan 30, 2025</p>
+        </header>
+            <p>
+                The campaign this game is based on is 3 years old now, and I started working on this project during winter break of 2024.
+                I'd been wanting to create a game about our campaign for a while, but now that I also wanted to learn Godot, I saw a
+                great opportunity to finally turn that idea into reality. I talked to the friends I play with, who are all talented artists, 
+                to see if they would be on board to helping me create assets for the game, and they were all super excited about it.
+            </p> 
+
+            <p>
+                There are 6 player characters in the campaign, all of which I want to make into playable characters in this game. Our 
+                gamemaster (who's contributing to the project with some wonderful concept art) suggested that I divide the characters into
+                3 classes, for which I drafted character archetypes:
+            </p>
+            <dl>
+                <dt><b>Brawler</b></dt>
+                <dd>
+                    Emphasizes high damage with melee attacks that don't fluctuate, always dealing critical hits if
+                    charged for long enough. The Brawler rewards players who can read their opponents like a book.
+                </dd>
+                <dt><b>Skirmisher</b></dt>
+                <dd>
+                    Focuses on versatility and mobility. The Skirmisher has a range of offensive
+                    and defensive tools that let strategic players adapt to any foe.
+                </dd>
+                <dt><b>Arcanist</b></dt>
+                <dd>
+                    Magic wielders that typically start off weak, but snowball into living nightmares. 
+                    The Arcanist trades consistency for trickery and deception, perfect for those with an affinity for chaos.
+                </dd>
+            </dl>
+            <figure>
+                <picture>
+                    <source media="(max-width:1100px)" srcset="./images/devlog/archetypeicons.jpg" width="315" alt="Class emblem sketches">
+                    <img src="./images/devlog/archetypeicons.jpg" width="500" alt="Class emblem sketches">
+                </picture>
+                <figcaption>
+                    Top left: Arcanist icon, top right: Brawler icon, bottom: Skirmisher icon. 
+                    <br>
+                    <strong>
+                        Made by our gamemaster, who's also a talented artist. Check him out on <a href="https://www.instagram.com/waniitoh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">instagram</a>!
+                    </strong>
+                </figcaption>
+            </figure>
+            <p>
+                I think the coolest thing about TTRPGs is that they inspire so much creativity. Whenever I work on anything
+                related to the characters we created, be it a short animation or drawing, I just get this surge of motivation and creativity.
+                It's really hard for me to put a project down when it involves our D&D campaign in some way, and I feel like that's just the
+                nature of how TTRPGs are designed. They are designed to make players get invested in a game, typically through story 
+                immersion, not just game mechanics. I think, in a way at least, all games aim to immerse players in their worlds, it's 
+                just that the way in which players are allowed to interact with the world in a TTRPG and in a video game differs a lot.       
+            </p>
+    </article>
+    <footer>
+        <address>
+            Author: Gabriel Ikezaki<br> 
+            San Diego, CA<br>
+            USA
+         </address>
+         <span>
+            <a href="https://www.linkedin.com/in/gabriel-ikezaki/" target="_blank">LinkedIn</a> | 
+            <a href="https://www.instagram.com/gikezaki/profilecard/?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a> | 
+            <a href="https://k4lamari.itch.io/" target="_blank">Itch.io Page</a> |  
+            <a href="https://github.com/Kalamari2002" target="_blank">Github</a>
+         </span>
+    </footer>
+    <script>
+        const moonIconDark = "./images/icons/moon_icon_darkmode.png";
+        const moonIconLight = "./images/icons/moon_icon_lightmode.png";
+        const sunIconDark = "./images/icons/sun_icon_darkmode.png";
+        const sunIconLight = "./images/icons/sun_icon_lightmode.png";
+
+        const toggleIcons = document.querySelectorAll(".mode-toggle > img");
+        const moonIcon = toggleIcons[0];
+        const sunIcon = toggleIcons[1];
+
+        const toggleWrapper = document.querySelector(".mode-toggle");
+        const toggle = document.querySelector("input[type='checkbox']");
+
+        const lightStyleSrc = "./styles/devlog-lightmode.css";
+        const darkStyleSrc = "./styles/devlog.css";
+
+        const styleLink = document.querySelector("link");
+        
+
+        toggleWrapper.hidden = false;
+        toggle.disabled = false;
+
+        if(localStorage.getItem('ToggleMode') == null){
+            console.log("No Data");
+            switchToDarkMode();
+        }else{
+            if(localStorage.getItem('ToggleMode') == 'dark'){
+                switchToDarkMode();
+                toggle.checked = false;
+            }else if(localStorage.getItem('ToggleMode') == 'light'){
+                switchToLightMode();
+                toggle.checked = true;
+            }
+        }
+        toggle.addEventListener('change',()=>{
+            toggleMode();
+        });
+
+        function toggleMode(){
+            let mode = localStorage.getItem('ToggleMode');
+            if(mode == 'dark'){
+                switchToLightMode();
+            }else if(mode == 'light'){
+                switchToDarkMode();
+            }
+        }
+
+        function switchToLightMode(){
+            styleLink.href = lightStyleSrc;
+            localStorage.setItem('ToggleMode', 'light');
+            moonIcon.src = moonIconLight;
+            sunIcon.src = sunIconLight;
+        }
+        function switchToDarkMode(){
+            styleLink.href = darkStyleSrc;
+            localStorage.setItem('ToggleMode', 'dark');
+            moonIcon.src = moonIconDark;
+            sunIcon.src = sunIconDark;
+        }
+    </script>
+</body>
+</html>

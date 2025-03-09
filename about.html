@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="./styles/about.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="portfolio, game, design, development, programming, coding, gamedev, c#, unity, godot, game jams, visual art, animation, drawing">
+    <meta name="description" content="CS major at UCSD who loves coding, designing and playing games! Take a look at the games I made, and the one I'm currently working on. Enjoy your stay!">
+    <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2>Gabriel Ikezaki - Game Dev Portfolio</h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="devlog.html">DevLog</a>
+            </li>
+            <li>
+                <a href="mygames.html">Games</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="form.html">Form</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <span class="mode-toggle" hidden>
+        <img src="./images/icons/moon_icon_darkmode.png" alt="moon-icon" width="50px">
+        <label class="switch">
+            <input type="checkbox" disabled>
+            <span class="slider"></span>
+        </label>
+        <img src="./images/icons/sun_icon_darkmode.png" alt="sun-icon" width="50px">
+    </span>
+    <h1>About Me</h1>
+    <section class="introduction" title="introduction">
+        <h2>My journey</h2>
+        <p>
+            I'm a CS major at UCSD, and I'm eager to start my career in the software or, better yet, gaming industry!
+            In the past 3 years studying computer science, I've gained invaluable experience building apps, programs, algorithms and everything
+            code related (this very portfolio began as a course project). But really, I started pursuing this journey all because of
+            game development. 
+            <br>
+            <br>
+            It was the joy of creating little games with my brother as a kid that led me to this field, and even
+            today I'd say video games are still my favorite projects to be a part of. 
+        </p>
+    </section>
+    <section title="experience">
+        <h2>Professional Experience</h2>
+        <div class="experience-entry" id="experience-entry-1">
+            <header>
+                <h3><strong>Akamai Technologies</strong>/<em>Marketing Data Intern</em></h3>
+                <p>July - September 2024</p>
+            </header>
+            <ul>
+                <li>
+                    Thoroughly researched limits and potential use cases of emerging GenAI tools in marketing and gave valuable input from a CS perspective to Akamai's Marketing AI Council.
+                </li>
+                <li>
+                    Contributed to a resource center for employee education on AI by assembling a company webpage. 
+                </li>
+                <li>
+                    Evaluated data such as TAM and GMRR of verticals to heatmap market interest in network security products.
+                </li>
+                <li>
+                    Created an app to format company's newsletter with React and Tailwind
+                </li>
+            </ul>
+        </div>
+        <div class="experience-entry" id="experience-entry-2">
+            <header>
+                <h3><strong>Zeka Education</strong>/<em>Software Engineer Intern</em></h3>
+                <p>June - August 2022</p>
+            </header>
+            <ul>
+                <li>
+                    Developed a Whatsapp group chat bot for an educational startup with Node.js.
+                </li>
+                <li>
+                    Created an algorithm that kept track of 200+ students' engagement and activity in the chat.  
+                </li>
+                <li>
+                    Algorithm recognized and recorded subjects that were being addressed in each message.
+                </li>
+                <li>
+                    Was pivotal in highlighting what topics students struggled with the most. 
+                </li>
+                <li>
+                    Processed data over the course of 3 months with MongoDB. 
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="interests" title="interests">
+        <h2>Interests</h2>
+        <p>
+            When I'm not coding, I also love drawing and animating, which is why most (not all of them ofc) of the sprite animations 
+            you'll see in my games are done by me! I'm a big fan of D&D and weird media too, especially horror stories about the
+            strange and bizarre.  
+        </p>
+    </section>
+    <footer>
+        <address>
+            Author: Gabriel Ikezaki<br> 
+            San Diego, CA<br>
+            USA
+         </address>
+         <span>
+            <a href="https://www.linkedin.com/in/gabriel-ikezaki/" target="_blank">LinkedIn</a> | 
+            <a href="https://www.instagram.com/gikezaki/profilecard/?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a> | 
+            <a href="https://k4lamari.itch.io/" target="_blank">Itch.io Page</a> |  
+            <a href="https://github.com/Kalamari2002" target="_blank">Github</a>
+         </span>
+    </footer>
+    <script>
+        const moonIconDark = "./images/icons/moon_icon_darkmode.png";
+        const moonIconLight = "./images/icons/moon_icon_lightmode.png";
+        const sunIconDark = "./images/icons/sun_icon_darkmode.png";
+        const sunIconLight = "./images/icons/sun_icon_lightmode.png";
+
+        const toggleIcons = document.querySelectorAll(".mode-toggle > img");
+        const moonIcon = toggleIcons[0];
+        const sunIcon = toggleIcons[1];
+
+        const toggleWrapper = document.querySelector(".mode-toggle");
+        const toggle = document.querySelector("input[type='checkbox']");
+
+        const lightStyleSrc = "./styles/about-lightmode.css";
+        const darkStyleSrc = "./styles/about.css";
+
+        const styleLink = document.querySelector("link");
+        
+
+        toggleWrapper.hidden = false;
+        toggle.disabled = false;
+
+        if(localStorage.getItem('ToggleMode') == null){
+            console.log("No Data");
+            switchToDarkMode();
+        }else{
+            if(localStorage.getItem('ToggleMode') == 'dark'){
+                switchToDarkMode();
+                toggle.checked = false;
+            }else if(localStorage.getItem('ToggleMode') == 'light'){
+                switchToLightMode();
+                toggle.checked = true;
+            }
+        }
+        toggle.addEventListener('change',()=>{
+            toggleMode();
+        });
+
+        function toggleMode(){
+            let mode = localStorage.getItem('ToggleMode');
+            if(mode == 'dark'){
+                switchToLightMode();
+            }else if(mode == 'light'){
+                switchToDarkMode();
+            }
+        }
+
+        function switchToLightMode(){
+            styleLink.href = lightStyleSrc;
+            localStorage.setItem('ToggleMode', 'light');
+            moonIcon.src = moonIconLight;
+            sunIcon.src = sunIconLight;
+        }
+        function switchToDarkMode(){
+            styleLink.href = darkStyleSrc;
+            localStorage.setItem('ToggleMode', 'dark');
+            moonIcon.src = moonIconDark;
+            sunIcon.src = sunIconDark;
+        }
+    </script>
+</body>
+</html>

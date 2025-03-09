@@ -1,0 +1,384 @@
+@font-face{
+    font-family: Quicksand;
+    src: url('../fonts/Quicksand/Quicksand-Regular.ttf');
+}
+@font-face{
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+@font-face{
+    font-family: MontserratBoldItalic;
+    src: url('../fonts/Montserrat/static/Montserrat-BoldItalic.ttf');
+}
+@font-face{
+    font-family: MontserratExtraBold;
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+}
+@font-face{
+    font-family: MontserratLight;
+    src: url('../fonts/Montserrat/static/Montserrat-Light.ttf');
+}
+
+:root{
+    
+    --background-color: color-mix(in hsl, hsl(0, 8%, 15%), rgb(52, 51, 42) 35%);
+    --game-entry-background-color: color(display-p3 0.27 0.25 0.23);
+    --normal-font-color: rgb(238, 236, 207);
+    --link-font-color: rgb(175, 232, 213);
+    --footer-background-color: rgb(99, 99, 99);
+    --invalid-background-color:rgb(236, 149, 149);
+
+    --paragraph-font-family: Quicksand;
+    --seg-title-font-family: MontserratBoldItalic;
+    --page-title-font-family: MontserratExtraBold;
+    --large-font-family: MontserratLight;
+
+    --nav-item-padding: 20px;
+
+    --landscape-gallery-row-gap:4dvh;
+    --gallery-default-col-gap:10dvw;
+    --gallery-landscape-col-gap:6dvw;
+
+    --mobile-game-margin-top:10%;
+    --item-margin-bottom: 4%;
+    --segment-margin-top:2%;
+    --default-gap:2%;
+
+    --page-title-font-size: 46px;
+    --seg-title-font-size: 36px;
+    --game-title-font-size:28px;
+    --paragraph-font-size: 24px;
+    --mobile-paragraph-font-size: 20px;
+    --mobile-footer-font-size: 18px;
+    --mobile-nav-font-size: 16px;
+
+    --desktop-game-width: 500px;
+    --mobile-game-width: 350px;
+
+    /*toggle variables*/
+    --slider-relative-size: 50%;
+    --slider-border-width: 6px;
+    --switch-width:100px;
+    --switch-height:50px;
+
+    --image-width-modifier: 0.9;
+    --game-entry-padding-modifier: 0.05;
+    
+    --long-text-width: 75ch;
+    --medium-text-width: 50ch;
+    --latest-text-width: 30ch;
+    --short-text-width: 25ch;
+
+    --fade-in-default-time: 2s;
+    --introduction-animation-delay: 1.2s;
+    --quick-transition-time: 0.5s;
+
+    --zoomin-scale : 1.1;
+}
+
+@keyframes fade-in {
+    from { opacity: 0;}
+    to { opacity: 1; }
+}
+
+.introduction > p{
+    opacity: 0;
+    animation: fade-in var(--fade-in-default-time) forwards;
+    animation-delay: var(--introduction-animation-delay);
+}
+/*This makes sure that border and, most importantly, 
+padding are both included in the width/height of an element*/
+* {
+    box-sizing: border-box;
+    -border-style: solid;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--paragraph-font-family), Helvetica;
+    background-color: var(--background-color);
+    color: var(--normal-font-color)
+}
+
+h1 {
+    font-size: var(--page-title-font-size);
+    font-family: var(--page-title-font-family), Helvetica;
+    animation: fade-in var(--fade-in-default-time);
+}
+
+h2{
+    font-size: var(--seg-title-font-size);
+    font-style: italic;
+    font-family: var(--seg-title-font-family), Helvetica;
+}
+
+h3{
+    font-size: var(--game-title-font-size);
+}
+
+.switch{
+    width: var(--switch-width);
+    height:var(--switch-height);
+    position:relative;
+    display: inline-block;
+    border-style: solid;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--normal-font-color);
+    border: solid var(--background-color) var(--slider-border-width);
+    width: var(--slider-relative-size);
+}
+input:checked + .slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    background-color: var(--normal-font-color);
+    border: solid var(--background-color) 6px;
+    width: 50%;
+}
+
+p {
+    font-size: var(--paragraph-font-size);
+}
+
+a {
+    color: var(--link-font-color);
+}
+
+footer{
+    margin-top: var(--segment-margin-top);
+    padding: var(--default-gap);
+    width: 100%;
+    background-color:var(--footer-background-color);
+    font-size: var(--paragraph-font-size);
+}
+footer a{
+    text-decoration: none;
+}
+
+section{
+    margin-left: var(--default-gap);
+    margin-right: var(--default-gap);
+    margin-top: var(--segment-margin-top);
+}
+
+/*Smaller phones*/
+@media screen and (max-width: 500px){
+    nav {
+        display: flex;
+        background-color: var(--normal-font-color);
+        font-size: var(--mobile-nav-font-size);
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav li {
+        float:left;
+    }
+    
+    nav li a {
+        display: block;
+        padding: var(--nav-item-padding);
+        background-color: var(--normal-font-color);
+        color: var(--background-color);
+        text-decoration: none;
+    }
+    
+    nav li a:hover {
+        background-color: var(--background-color);
+        color: var(--normal-font-color);
+    }
+
+    footer{
+        font-size: var(--mobile-footer-font-size);
+    }
+
+    .introduction > p{
+        width: var(--short-text-width);
+    }    
+
+    .experience-entry > ul li{
+        width: var(--short-text-width);
+        font-size: var(--mobile-paragraph-font-size);
+        margin-bottom: var(--item-margin-bottom);
+    }
+
+    .interests p{
+        width: var(--short-text-width);
+    }
+
+}
+
+/*Intermediate*/
+@media screen and (min-width: 500px){
+    nav {
+        display: flex;
+        background-color: var(--normal-font-color);
+        font-size: var(--mobile-nav-font-size);
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav li {
+        float:left;
+    }
+    
+    nav li a {
+        display: block;
+        padding: var(--nav-item-padding);
+        background-color: var(--normal-font-color);
+        color: var(--background-color);
+        text-decoration: none;
+    }
+    
+    nav li a:hover {
+        background-color: var(--background-color);
+        color: var(--normal-font-color);
+    }
+
+    footer{
+        font-size: var(--mobile-footer-font-size);
+    }
+
+    .introduction > p{
+        width: var(--short-text-width);
+    }    
+
+    .experience-entry > ul li{
+        width: var(--short-text-width);
+        font-size: var(--mobile-paragraph-font-size);
+        margin-bottom: var(--item-margin-bottom);
+    }
+
+    .interests p{
+        width: var(--short-text-width);
+    }
+
+}
+
+/*Tablet, landscape*/
+@media screen and (min-width: 1000px){
+    nav {
+        display: flex;
+        background-color: var(--normal-font-color);
+        font-size: var(--paragraph-font-size);
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav li {
+        float:left;
+    }
+    
+    nav li a {
+        display: block;
+        padding: var(--nav-item-padding);
+        background-color: var(--normal-font-color);
+        color: var(--background-color);
+        text-decoration: none;
+        transition: color 0.5s;
+        transition: background-color 0.5s;
+    }
+    
+    nav li a:hover {
+        background-color: var(--background-color);
+        color: var(--normal-font-color);
+    }
+
+    .introduction > p{
+        width: var(--long-text-width);
+    }    
+
+    .introduction > p{
+        width: var(--long-text-width);
+    }
+
+    .interests > p{
+        width: var(--long-text-width);
+    }
+
+    .experience-entry > ul li{
+        width: var(--medium-text-width);
+        font-size: var(--paragraph-font-size);
+        margin-bottom: var(--default-gap);
+    }
+}
+
+/*Desktop*/
+@media screen and (min-width: 1300px) {
+    ul{
+        font-size: var(--paragraph-font-size);
+    }
+    nav {
+        display: flex;
+        background-color: var(--normal-font-color);
+        font-size: var(--paragraph-font-size);
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav li {
+        float:left;
+    }
+    
+    nav li a {
+        display: block;
+        padding: var(--nav-item-padding);
+        background-color: var(--normal-font-color);
+        color: var(--background-color);
+        text-decoration: none;
+        transition: color 0.5s;
+        transition: background-color 0.5s;
+    }
+    
+    nav li a:hover {
+        background-color: var(--background-color);
+        color: var(--normal-font-color);
+    }
+
+    footer{
+        font-size: var(--paragraph-font-size);
+    }
+
+    .introduction > p{
+        width: var(--long-text-width);
+    }    
+
+    .experience-entry > ul li{
+        width: var(--long-text-width);
+    }
+    .interests > p{
+        width: var(--long-text-width);
+    }
+}

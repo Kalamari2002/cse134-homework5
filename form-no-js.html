@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="./styles/form.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="portfolio, game, design, development, programming, coding, gamedev, c#, unity, godot, game jams, visual art, animation, drawing">
+    <meta name="description" content="CS major at UCSD who loves coding, designing and playing games! Take a look at the games I made, and the one I'm currently working on. Enjoy your stay!">
+    <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form action="https://httpbin.org/post" method="POST">
+        <label for="contact-name">Name</label><br>
+        <input type="text" id="contact-name" name="contact-name" placeholder="Jane Doe" minlength="1" maxlength="30" pattern="[A-Z a-z]+" tabindex="1">
+        <output name="name-error-output" for="contact-name">Err message</output>
+        <output name="name-info-output" for="contact-name">Info message</output>
+        <br>
+        <label for="contact-email">Email *</label><br>
+        <input type="email" id="contact-email" name="contact-email" placeholder="example@gmail.com" maxlength="320" required tabindex="2">
+        <output name="email-error-output" for="contact-email">Err message</output>
+        <output name="email-info-output" for="contact-email">Info message</output>
+        <br>
+        <label for="comments">Comments (max 500 characters) *</label><br>
+        <textarea id="comments" name="comments" placeholder="Bugs, features, balance changes" rows="4" cols="50" maxlength="500" required tabindex="3"></textarea>
+        <output name="comments-error-output" for="comments">Err message</output>
+        <output name="comments-info-output" for="comments">Info message</output>
+        <br>
+        <input type="hidden" name="possible_bot" value="true">
+        <input type="submit">
+    </form>
+</body>
+</html>
