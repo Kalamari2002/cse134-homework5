@@ -69,52 +69,31 @@
                         Placed <b>16th in the "Overall" category</b> and 14th in the "Fun" category <b>out of 910 entries.</b></p>
                 </project-info>
             </project-card>
-
+            <button onclick="console.log('LOCAL');">Load Local</button>
+            <button onclick="console.log('REMOTE');">Load Remote</button>
             <div class="gallery-container two-col">
-                <div class="game-entry">
-                    <a href="https://k4lamari.itch.io/kitchen-diver" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/KitchenDiverThumb_Mobile.png" width="315" height="315" alt="Kitchen Diver - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/KitchenDiverThumb_Desktop.png" width="450" height="250" title="Kitchen Diver" alt="Kitchen Diver - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://k4lamari.itch.io/kitchen-diver" target="_blank">Kitchen Diver</a>
-                        </h3>
-                        <p><i>Brackeys Game Jam 2023.2.</i> <br>
+                <project-card game-title="Kitchen Diver" game-src="https://k4lamari.itch.io/kitchen-diver">
+                    <project-thumbnail desktop-src="./images/thumbnails/Desktop/KitchenDiverThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/KitchenDiverThumb_Mobile.png"></project-thumbnail>
+                    <project-info>
+                        <p><i>Brackeys Game Jam 2023.2.</i><br>
                             Placed <b>16th in the "Overall" category</b> and 14th in the "Fun" category <b>out of 910 entries.</b></p>
-                    </hgroup>
-                </div>
-                <div class="game-entry">
-                    <a href="https://mateus-ikezaki.itch.io/running-low" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/RunningLowThumb_Mobile.png" width="315" height="315" alt="Running Low - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/RunningLowThumb_Desktop.png" width="450" height="250" title="Running Low" alt="Running Low - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://mateus-ikezaki.itch.io/running-low" target="_blank">Running Low</a>
-                        </h3>
+                    </project-info>
+                </project-card>
+                
+                <project-card game-title="Running Low" game-src="https://mateus-ikezaki.itch.io/running-low">
+                    <project-thumbnail desktop-src="./images/thumbnails/Desktop/RunningLowThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/RunningLowThumb_Mobile.png"></project-thumbnail>
+                    <project-info>
                         <p><i>Itchio Mini Jam 73: Power.</i> <br>
                             Placed <b>14th in the "Overall" category</b> and 5th in the "Enjoyment" category <b>out of 176 entries.</b></p>
-                    </hgroup>
-                </div>
-                <div class="game-entry">
-                    <a href="https://mateus-ikezaki.itch.io/a-weird-boss-battle" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/WeirdBossBattleThumb_Mobile.png" width="315" height="315" alt="Weird Boss Battle - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/WeirdBossBattleThumb_Desktop.png" width="450" height="250" title="Weird Boss Battle" alt="Weird Boss Battle - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://mateus-ikezaki.itch.io/a-weird-boss-battle" target="_blank">Weird Boss Battle</a>
-                        </h3>
+                    </project-info>
+                </project-card>
+
+                <project-card game-title="Weird Boss Battle" game-src="https://mateus-ikezaki.itch.io/a-weird-boss-battle">
+                    <project-thumbnail desktop-src="./images/thumbnails/Desktop/WeirdBossBattleThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/WeirdBossBattleThumb_Mobile.png"></project-thumbnail>
+                    <project-info>
                         <p><i>Bear Jams Fall 2021</i></p>
-                    </hgroup>
-                </div>
+                    </project-info>
+                </project-card>
             </div>
         </section>
 
@@ -195,6 +174,7 @@
             <a href="https://github.com/Kalamari2002" target="_blank">Github</a>
          </span>
     </footer>
+    <script src="./scripts/CardManager.js"></script>
     <script>
         const moonIconDark = "./images/icons/moon_icon_darkmode.png";
         const moonIconLight = "./images/icons/moon_icon_lightmode.png";

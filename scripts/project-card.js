@@ -7,7 +7,6 @@ class ProjectCard extends HTMLElement{
     }
 
     connectedCallback(){
-        console.log(this.querySelector("p"));
     }
     
     attributeChangedCallback(name, oldValue, newValue) {
