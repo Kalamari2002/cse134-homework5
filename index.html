@@ -62,37 +62,22 @@
         <section title="jams" class="segment">
             <h2>Jam Entries</h2>
             
-            <project-card game-title="Kitchen Diver" game-src="https://k4lamari.itch.io/kitchen-diver">
-                <project-thumbnail desktop-src="./images/thumbnails/Desktop/KitchenDiverThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/KitchenDiverThumb_Mobile.png"></project-thumbnail>
-                <project-info>
-                    <p><i>Brackeys Game Jam 2023.2.</i><br>
-                        Placed <b>16th in the "Overall" category</b> and 14th in the "Fun" category <b>out of 910 entries.</b></p>
-                </project-info>
-            </project-card>
-            <button onclick="console.log('LOCAL');">Load Local</button>
-            <button onclick="console.log('REMOTE');">Load Remote</button>
+            <button id="local-load">Local Load</button>
+            <button id="remote-load" onclick="console.log('REMOTE');">Remote Load</button>
             <div class="gallery-container two-col">
-                <project-card game-title="Kitchen Diver" game-src="https://k4lamari.itch.io/kitchen-diver">
-                    <project-thumbnail desktop-src="./images/thumbnails/Desktop/KitchenDiverThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/KitchenDiverThumb_Mobile.png"></project-thumbnail>
-                    <project-info>
-                        <p><i>Brackeys Game Jam 2023.2.</i><br>
-                            Placed <b>16th in the "Overall" category</b> and 14th in the "Fun" category <b>out of 910 entries.</b></p>
-                    </project-info>
-                </project-card>
-                
-                <project-card game-title="Running Low" game-src="https://mateus-ikezaki.itch.io/running-low">
-                    <project-thumbnail desktop-src="./images/thumbnails/Desktop/RunningLowThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/RunningLowThumb_Mobile.png"></project-thumbnail>
-                    <project-info>
-                        <p><i>Itchio Mini Jam 73: Power.</i> <br>
-                            Placed <b>14th in the "Overall" category</b> and 5th in the "Enjoyment" category <b>out of 176 entries.</b></p>
-                    </project-info>
+                <project-card id="kitchen-diver">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
                 </project-card>
 
-                <project-card game-title="Weird Boss Battle" game-src="https://mateus-ikezaki.itch.io/a-weird-boss-battle">
-                    <project-thumbnail desktop-src="./images/thumbnails/Desktop/WeirdBossBattleThumb_Desktop.png" mobile-src="./images/thumbnails/Mobile/WeirdBossBattleThumb_Mobile.png"></project-thumbnail>
-                    <project-info>
-                        <p><i>Bear Jams Fall 2021</i></p>
-                    </project-info>
+                <project-card id="running-low">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
+                </project-card>
+
+                <project-card id="weird-boss-battle">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
                 </project-card>
             </div>
         </section>
@@ -100,62 +85,26 @@
         <section title="side projects" class="segment">
             <h2>Side Projects</h2>
             <div class="gallery-container two-col">
-                <div class="game-entry">
-                    <a href="https://k4lamari.itch.io/warriors-of-the-lost-clan" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/WarriorsThumbnail_Mobile.png" width="315" height="315" alt="Warriors of the Lost Clan - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/WarriorsThumbnail_Desktop.png" width="450" height="250" title="Warriors of the Lost Clan" alt="Warriors of the Lost Clan - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://k4lamari.itch.io/warriors-of-the-lost-clan" target="_blank">Warriors of the Lost Clan</a>
-                        </h3>
-                        <p>Beatem up, made with Unity. I hold this one very close to my heart ^^</p>
-                    </hgroup>
-                </div>
-                <div class="game-entry">
-                    <a href="https://k4lamari.itch.io/blast-2" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/Blast2Thumb_Mobile.png" width="315" height="315" alt="Blast 2.0 - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/Blast2Thumb_Desktop.png" width="450" height="250" title="Blast 2.0" alt="Blast 2.0 - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://k4lamari.itch.io/blast-2" target="_blank">Blast 2.0</a>
-                        </h3>
-                        <p>Mobile bullet hell, made with Unity. Mother's day gift.</p>
-                    </hgroup>
-                </div>
-                <div class="game-entry">
-                    <a href="https://mateus-ikezaki.itch.io/limbs" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/LimbsThumb-Mobile.png" width="315" height="315" alt="Limbs - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/LimbsThumb-Desktop.png" width="450" height="250" title="Limbs" alt="Limbs - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://mateus-ikezaki.itch.io/limbs" target="_blank">Limbs</a>
-                        </h3>
-                        <p>Platformer, made with Unity. My first game jam entry with my brother.</p>
-                    </hgroup>
-                </div>
-                <div class="game-entry">
-                    <a href="https://k4lamari.itch.io/the-night-of-100-demons" target="_blank">
-                        <picture>
-                            <source media="(max-width:1100px)" srcset="./images/thumbnails/Mobile/TN100DThumb_Mobile.png" width="315" height="315" alt="The Night of 100 Demons - Thumbnail">
-                            <img src="./images/thumbnails/Desktop/TN100DThumb_Desktop.png" width="450" height="250" title="The Night of 100 Demons" alt="The Night of 100 Demons - Thumbnail">
-                        </picture>
-                    </a>
-                    <hgroup>
-                        <h3>
-                            <a href="https://k4lamari.itch.io/the-night-of-100-demons" target="_blank">The Night of 100 Demons</a>
-                        </h3>
-                        <p>Beatem up, made with Unity. My first published game. Where it all began!</p>
-                    </hgroup>
-                </div>
+
+                <project-card id="warriors-of-the-lost-clan">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
+                </project-card>
+                
+                <project-card id="blast-2">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
+                </project-card>
+                
+                <project-card id="limbs">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
+                </project-card>
+
+                <project-card id="the-night-of-100-demons">
+                    <project-thumbnail></project-thumbnail>
+                    <project-info></project-info>
+                </project-card>
             </div>
         </section>
 
