@@ -8,7 +8,7 @@ class ProjectInfo extends HTMLElement{
 
     connectedCallback(){
         if(!(this.gameTitle = this.parentElement.getAttribute("game-title"))){
-            this.gameTitle = "Press buttons to fetch";
+            this.gameTitle = "Press buttons above to load";
         }
         if(!(this.gameSource = this.parentElement.getAttribute("game-src"))){
             this.gameSource = "";
