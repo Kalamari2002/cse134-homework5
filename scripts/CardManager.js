@@ -1,10 +1,5 @@
 const localLoadButton = document.querySelector("#local-load");
-
-const testProject = {
-    'game-title': '',
-    'game-description' : '',
-    'game-src' : ''
-}
+const remoteLoadButton = document.querySelector("#remote-load");
 
 const allProjects = {
     0:{
@@ -65,25 +60,49 @@ const allProjects = {
     }
 }
 
-localLoadButton.onclick = function(){populateCards();};
-
+let req = new XMLHttpRequest();
 const data = JSON.stringify(allProjects);
 localStorage.setItem('projects', data);
+
+localLoadButton.onclick = function(){fetchFromLocal()};
+remoteLoadButton.onclick = function(){fetchFromRemote()};
+
+req.onreadystatechange = () => {
+    if (req.readyState == XMLHttpRequest.DONE) {
+        remoteLoadButton.innerHTML = "Remote Load";
+        const fetchedData = JSON.parse(req.responseText);
+        console.log(fetchedData['record']['projects']);
+        populateCards(fetchedData['record']['projects']);
+    }
+}
 
 function fetchFromLocal(){
     const fetchedData = localStorage.getItem('projects');
     const data = JSON.parse(fetchedData);
     console.log(data);
+    populateCards(data);
 }
 
-function populateCards(){
-    for(id in allProjects){
-        const currProject = allProjects[id];
+function fetchFromRemote(){
+    remoteLoadButton.innerHTML="Fetching..."
+    console.log("Fetch from remote");
+    req.open("GET", "https://api.jsonbin.io/v3/b/67d202488a456b7966749b40", true);
+    req.setRequestHeader("X-Master-Key","$2a$10$IdsqKFXWO.mMxuV4BI0SgOKLwsc3uo4ZVwWkTTotAZwhPIOzhaFPu");
+    req.send();
+}
+
+function populateCards(projects){
+    for(id in projects){
+        const currProject = projects[id];
 
         const projectCard = document.querySelector(`#${currProject['card-id']}`);
         const projectInfo = projectCard.querySelector("project-info");
         const projectThumb = projectCard.querySelector("project-thumbnail");
-        const description = document.createElement("p");
+        let description;
+
+        if(!(description = projectCard.querySelector("p"))){
+            description = document.createElement("p")
+        }
     
         projectCard.setAttribute("game-title", currProject['game-title']);
         projectCard.setAttribute("game-src", currProject['game-src']);

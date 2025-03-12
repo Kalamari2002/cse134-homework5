@@ -114,6 +114,24 @@ h3{
     font-size: var(--game-title-font-size);
 }
 
+button{
+    background-color: var(--background-color);
+    
+    border: solid var(--normal-font-color);
+
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-family);
+    color: var(--normal-font-color);
+
+    margin-top: var(--default-gap);
+
+    width: var(--button-toggle-width);
+    height: var(--button-toggle-height);
+}
+button:hover{
+    cursor: pointer;
+}
+
 .switch{
     width: var(--switch-width);
     height:var(--switch-height);
@@ -158,7 +176,7 @@ a {
 }
 
 project-card{
-    border: solid aqua;
+    -border: solid aqua;
     background-color: var(--game-entry-background-color);
     display: flex;
     flex-direction: column;
