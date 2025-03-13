@@ -9,8 +9,7 @@
     <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./scripts/project-card.js"></script>
-    <script src="./scripts/project-info.js"></script>
-    <script src="./scripts/project-thumb.js"></script>
+    <script async src="./scripts/CardManager.js"></script>
 </head>
 
 <body>
@@ -123,7 +122,6 @@
             <a href="https://github.com/Kalamari2002" target="_blank">Github</a>
          </span>
     </footer>
-    <script src="./scripts/CardManager.js"></script>
     <script>
         const moonIconDark = "./images/icons/moon_icon_darkmode.png";
         const moonIconLight = "./images/icons/moon_icon_lightmode.png";
@@ -140,8 +138,7 @@
         const lightStyleSrc = "./styles/main-lightmode.css";
         const darkStyleSrc = "./styles/main.css";
 
-        const styleLink = document.querySelector("link");
-        
+        const styleLink = document.querySelector("link"); 
 
         toggleWrapper.hidden = false;
         toggle.disabled = false;

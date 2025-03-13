@@ -1,6 +1,3 @@
-const localLoadButton = document.querySelector("#local-load");
-const remoteLoadButton = document.querySelector("#remote-load");
-
 const allProjects = {
     0:{
         'card-id': 'kitchen-diver',
@@ -64,17 +61,23 @@ let req = new XMLHttpRequest();
 const data = JSON.stringify(allProjects);
 localStorage.setItem('projects', data);
 
-localLoadButton.onclick = function(){fetchFromLocal()};
-remoteLoadButton.onclick = function(){fetchFromRemote()};
+window.addEventListener("DOMContentLoaded", function(){
+    const localLoadButton = document.querySelector("#local-load");
+    const remoteLoadButton = document.querySelector("#remote-load");
+    
+    localLoadButton.onclick = function(){fetchFromLocal()};
+    remoteLoadButton.onclick = function(){fetchFromRemote()};
 
-req.onreadystatechange = () => {
-    if (req.readyState == XMLHttpRequest.DONE) {
-        remoteLoadButton.innerHTML = "Remote Load";
-        const fetchedData = JSON.parse(req.responseText);
-        console.log(fetchedData['record']['projects']);
-        populateCards(fetchedData['record']['projects']);
+    req.onreadystatechange = () => {
+        if (req.readyState == XMLHttpRequest.DONE) {
+            remoteLoadButton.innerHTML = "Remote Load";
+            const fetchedData = JSON.parse(req.responseText);
+            console.log(fetchedData['record']['projects']);
+            populateCards(fetchedData['record']['projects']);
+        }
     }
-}
+    
+});
 
 function fetchFromLocal(){
     const fetchedData = localStorage.getItem('projects');
@@ -84,6 +87,7 @@ function fetchFromLocal(){
 }
 
 function fetchFromRemote(){
+    const remoteLoadButton = document.querySelector("#remote-load");
     remoteLoadButton.innerHTML="Fetching..."
     console.log("Fetch from remote");
     req.open("GET", "https://api.jsonbin.io/v3/b/67d202488a456b7966749b40", true);
