@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const localLoadButton = document.querySelector("#local-load");
     const remoteLoadButton = document.querySelector("#remote-load");
     
-    localLoadButton.onclick = function(){console.log("local load"); fetchFromLocal()};
-    remoteLoadButton.onclick = function(){console.log("remote load"); fetchFromRemote()};
+    //localLoadButton.onclick = function(){console.log("local load"); fetchFromLocal()};
+    //remoteLoadButton.onclick = function(){console.log("remote load"); fetchFromRemote()};
 
     req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
