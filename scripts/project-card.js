@@ -11,12 +11,11 @@ class ProjectInfo extends HTMLElement{
             this.gameTitle = "Press buttons above to load";
         }
         if(!(this.gameSource = this.parentElement.getAttribute("game-src"))){
-            this.gameSource = "#local-load";
+            this.gameSource = "#jam-entries";
         }
-
         this.innerHTML = `
                 <h3>
-                    <a href="${this.gameSource}" target="_blank">${this.gameTitle}</a>
+                    <a href="${this.gameSource}">${this.gameTitle}</a>
                 </h3>`;
     }
 
@@ -47,7 +46,7 @@ class ProjectThumb extends HTMLElement{
             this.gameTitle = "Fetching"
         }
         if(!(this.gameSource = this.parentElement.getAttribute("game-src"))){
-            this.gameSource = "";
+            this.gameSource = "#jam-entries";
         }
         if(this.desktopSource == ""){
             this.desktopSource = "./images/thumbnails/Desktop/loading.png";
@@ -56,7 +55,7 @@ class ProjectThumb extends HTMLElement{
             this.mobileSource = "./images/thumbnails/Mobile/loading.png";
         }
         this.innerHTML=`
-                <a href="${this.gameSource}" target="_blank">
+                <a href="${this.gameSource}">
                     <picture>
                         <source media="(max-width:1100px)" srcset="${this.mobileSource}" width="315" height="315" alt="${this.gameTitle} - Thumbnail">
                         <img src="${this.desktopSource}"  width="450" height="250" title="${this.gameTitle}" alt="${this.gameTitle} - Thumbnail">

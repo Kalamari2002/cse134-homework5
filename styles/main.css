@@ -57,6 +57,9 @@
 
     --thumbnail-width-long: 450px;
 
+    --button-toggle-width: 200px;
+    --button-toggle-height:50px;
+
     --desktop-game-width: 500px;
     --mobile-game-width: 350px;
 
@@ -89,6 +92,13 @@
 padding are both included in the width/height of an element*/
 * {
     box-sizing: border-box;
+}
+
+nav{
+    z-index: 1;
+    width: 100%;
+    position:sticky;
+    top:0;
 }
 
 body{
