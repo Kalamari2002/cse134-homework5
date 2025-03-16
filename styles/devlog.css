@@ -33,15 +33,7 @@
     --page-title-font-family: MontserratExtraBold;
     --large-font-family: MontserratLight;
 
-    --nav-item-padding: 20px;
-
-    --landscape-gallery-row-gap:4dvh;
-    --gallery-default-col-gap:10dvw;
-    --gallery-landscape-col-gap:6dvw;
-    --latest-col-gap: 4dvw;
-
     --date-width: 80%;
-    --mobile-game-margin-top:10%;
     --entry-margin: 5%;
     --segment-margin-top:4%;
     --default-gap:2%;
@@ -54,9 +46,6 @@
     
     --mobile-paragraph-font-size: 20px;
     --mobile-footer-font-size: 18px;
-    --mobile-nav-font-size: 16px;
-
-    --thumbnail-width-long: 450px;
 
     --desktop-iframe-width: 720px;
     --desktop-iframe-height: 415px;
@@ -64,30 +53,33 @@
     --mobile-iframe-width: 315px;
     --mobile-iframe-height: 315px;
 
-    --desktop-game-width: 500px;
-    --mobile-game-width: 350px;
+    /*table*/
+    --table-font-size: 16px;
+    --table-long-padding: 15px;
+    --table-short-padding: 5px;
+
+    /*nav*/
+    --mobile-nav-font-size: 16px;
+    --nav-item-padding: 20px;
+    --nav-transition-time: 0.5s;
+    --nav-width: 100%;
+    --nav-z-index: 1;
 
     /*toggle variables*/
     --slider-relative-size: 50%;
     --slider-border-width: 6px;
     --switch-width:100px;
+    --slider-position-offset: 50%;
     --switch-height:50px;
-    
-    --image-width-modifier: 0.9;
-    --game-entry-padding-modifier: 0.05;
-    
+        
     --entry-text-width: 80ch;
     --long-text-width: 70ch;
     --medium-text-width: 50ch;
-    --latest-text-width: 30ch;
     --short-text-width: 25ch;
     --mobile-text-width: 20ch;
 
     --fade-in-default-time: 2s;
     --introduction-animation-delay: 1.2s;
-    --quick-transition-time: 0.5s;
-
-    --zoomin-scale : 1.1;
 }
 
 @keyframes fade-in {
@@ -100,6 +92,37 @@ padding are both included in the width/height of an element*/
     box-sizing: border-box;
     -border-style: solid;
     -border-color: aqua;
+}
+
+nav{
+    z-index: var(--nav-z-index);
+    width: var(--nav-width);
+    position:sticky;
+    top:0;
+}
+    
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float:left;
+}
+
+nav li a {
+    display: block;
+    padding: var(--nav-item-padding);
+    background-color: var(--normal-font-color);
+    color: var(--background-color);
+    text-decoration: none;
+    transition: color var(--nav-transition-time);
+    transition: background-color var(--nav-transition-time);
+}
+nav li a:hover {
+    background-color: var(--background-color);
+    color: var(--normal-font-color);
 }
 
 body{
@@ -162,12 +185,12 @@ input:checked + .slider{
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 50%;
+    left: var(--slider-position-offset);
     right: 0;
     bottom: 0;
     background-color: var(--normal-font-color);
-    border: solid var(--background-color) 6px;
-    width: 50%;
+    border: solid var(--background-color) var(--slider-border-width);
+    width: var(--slider-relative-size);
 }
 
 p {
@@ -235,29 +258,6 @@ header p{
         font-size: var(--mobile-nav-font-size);
     }
     
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
-
     footer{
         font-size: var(--mobile-footer-font-size);
     }
@@ -298,13 +298,13 @@ header p{
     }
 
     .devlog-entry > table{
-        font-size: 16px;
+        font-size: var(--table-font-size);
     }    
     .devlog-entry > table tr th{
-        padding:5px;
+        padding: var(--table-short-padding);
     }
     .devlog-entry > table tr td{
-        padding:5px;
+        padding: var(--table-short-padding);
     }
 
     .devlog-entry > aside blockquote {
@@ -320,29 +320,6 @@ header p{
         font-size: var(--mobile-nav-font-size);
     }
     
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
-
     footer{
         font-size: var(--mobile-footer-font-size);
     }
@@ -382,13 +359,13 @@ header p{
     }
 
     .devlog-entry > table{
-        font-size: 16px;
+        font-size: var(--table-font-size);
     }    
     .devlog-entry > table tr th{
-        padding:5px;
+        padding: var(--table-short-padding);
     }
     .devlog-entry > table tr td{
-        padding:5px;
+        padding: var(--table-short-padding);
     }
 
     .devlog-entry > aside blockquote {
@@ -405,38 +382,9 @@ header p{
         font-size: var(--paragraph-font-size);
     }
     
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-        transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
-
     figcaption{
         font-size: var(--mobile-paragraph-font-size);
         width: var(--medium-text-width);
-    }
-
-    img{
-        object-position: 50% 0%;
     }
 
     iframe{
@@ -478,10 +426,10 @@ header p{
         font-size: var(--paragraph-font-size);
     }    
     .devlog-entry > table tr th{
-        padding:15px;
+        padding:var(--table-long-padding);
     }
     .devlog-entry > table tr td{
-        padding:15px;
+        padding:var(--table-long-padding);
     }
 
     .devlog-entry > aside blockquote {
@@ -497,39 +445,10 @@ header p{
         background-color: var(--normal-font-color);
         font-size: var(--paragraph-font-size);
     }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-        transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
 
     figcaption{
         font-size: var(--mobile-paragraph-font-size);
         width: var(--medium-text-width);
-    }
-
-    img{
-        object-position: 50% 0%;
     }
 
     iframe{
@@ -576,10 +495,10 @@ header p{
         font-size: var(--paragraph-font-size);
     }    
     .devlog-entry > table tr th{
-        padding:15px;
+        padding:var(--table-long-padding);
     }
     .devlog-entry > table tr td{
-        padding:15px;
+        padding:var(--table-long-padding);
     }
 
     .devlog-entry > aside blockquote {
