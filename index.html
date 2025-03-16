@@ -9,6 +9,7 @@
     <!--This lets you specify the aread of the window where content will be shown. Good to specify how it'll be displayed for different devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./scripts/project-card.js"></script>
+    <script src="./scripts/mode-toggle.js"></script>
     <script async src="./scripts/CardManager.js"></script>
 </head>
 
@@ -28,20 +29,14 @@
             <li>
                 <a href="about.html">About</a>
             </li>
-            <li>
-                <a href="form.html">Form</a>
-            </li>
         </ul>
     </nav>
     <br>
-    <span class="mode-toggle" hidden>
-        <img src="./images/icons/moon_icon_darkmode.png" alt="moon-icon" width="50px">
-        <label class="switch">
-            <input type="checkbox" disabled>
-            <span class="slider"></span>
-        </label>
-        <img src="./images/icons/sun_icon_darkmode.png" alt="sun-icon" width="50px">
-    </span>
+    <mode-toggle dark-src="./styles/main.css" light-src="./styles/main-lightmode.css">
+        <noscript>
+            <p>*Please enable javascript to switch between dark and light modes</p>
+        </noscript>
+    </mode-toggle>
     <h1>Hello!</h1>
     <section class="segment introduction">
         <img src="./images/profilepic_cropped.jpg" width="300" height="300" alt="profile pic">
@@ -122,64 +117,5 @@
             <a href="https://github.com/Kalamari2002" target="_blank">Github</a>
          </span>
     </footer>
-    <script>
-        const moonIconDark = "./images/icons/moon_icon_darkmode.png";
-        const moonIconLight = "./images/icons/moon_icon_lightmode.png";
-        const sunIconDark = "./images/icons/sun_icon_darkmode.png";
-        const sunIconLight = "./images/icons/sun_icon_lightmode.png";
-
-        const toggleIcons = document.querySelectorAll(".mode-toggle > img");
-        const moonIcon = toggleIcons[0];
-        const sunIcon = toggleIcons[1];
-
-        const toggleWrapper = document.querySelector(".mode-toggle");
-        const toggle = document.querySelector("input[type='checkbox']");
-
-        const lightStyleSrc = "./styles/main-lightmode.css";
-        const darkStyleSrc = "./styles/main.css";
-
-        const styleLink = document.querySelector("link"); 
-
-        toggleWrapper.hidden = false;
-        toggle.disabled = false;
-
-        if(localStorage.getItem('ToggleMode') == null){
-            console.log("No Data");
-            switchToDarkMode();
-        }else{
-            if(localStorage.getItem('ToggleMode') == 'dark'){
-                switchToDarkMode();
-                toggle.checked = false;
-            }else if(localStorage.getItem('ToggleMode') == 'light'){
-                switchToLightMode();
-                toggle.checked = true;
-            }
-        }
-        toggle.addEventListener('change',()=>{
-            toggleMode();
-        });
-
-        function toggleMode(){
-            let mode = localStorage.getItem('ToggleMode');
-            if(mode == 'dark'){
-                switchToLightMode();
-            }else if(mode == 'light'){
-                switchToDarkMode();
-            }
-        }
-
-        function switchToLightMode(){
-            styleLink.href = lightStyleSrc;
-            localStorage.setItem('ToggleMode', 'light');
-            moonIcon.src = moonIconLight;
-            sunIcon.src = sunIconLight;
-        }
-        function switchToDarkMode(){
-            styleLink.href = darkStyleSrc;
-            localStorage.setItem('ToggleMode', 'dark');
-            moonIcon.src = moonIconDark;
-            sunIcon.src = sunIconDark;
-        }
-    </script>
 </body>
 </html>

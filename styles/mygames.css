@@ -26,6 +26,7 @@
     --normal-font-color: rgb(238, 236, 207);
     --link-font-color: rgb(175, 232, 213);
     --footer-background-color: rgb(99, 99, 99);
+    --invalid-color:rgb(236, 149, 149);
 
     --paragraph-font-family: Quicksand;
     --seg-title-font-family: MontserratBoldItalic;
@@ -100,6 +101,10 @@ h2{
 
 h3{
     font-size: var(--game-title-font-size);
+}
+
+noscript{
+    color:var(--invalid-color)
 }
 
 .switch{

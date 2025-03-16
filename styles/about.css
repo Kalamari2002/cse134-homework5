@@ -26,7 +26,7 @@
     --normal-font-color: rgb(238, 236, 207);
     --link-font-color: rgb(175, 232, 213);
     --footer-background-color: rgb(99, 99, 99);
-    --invalid-background-color:rgb(236, 149, 149);
+    --invalid-color:rgb(236, 149, 149);
 
     --paragraph-font-family: Quicksand;
     --seg-title-font-family: MontserratBoldItalic;
@@ -117,29 +117,10 @@ h3{
     font-size: var(--game-title-font-size);
 }
 
-.switch{
-    width: var(--switch-width);
-    height:var(--switch-height);
-    position:relative;
-    display: inline-block;
-    border-style: solid;
+noscript{
+    color:var(--invalid-color)
 }
-.switch input{
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider{
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--normal-font-color);
-    border: solid var(--background-color) var(--slider-border-width);
-    width: var(--slider-relative-size);
-}
+
 input:checked + .slider{
     position: absolute;
     cursor: pointer;
@@ -175,6 +156,30 @@ section{
     margin-left: var(--default-gap);
     margin-right: var(--default-gap);
     margin-top: var(--segment-margin-top);
+}
+
+.switch{
+    width: var(--switch-width);
+    height:var(--switch-height);
+    position:relative;
+    display: inline-block;
+    border-style: solid;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--normal-font-color);
+    border: solid var(--background-color) var(--slider-border-width);
+    width: var(--slider-relative-size);
 }
 
 /*Smaller phones*/
