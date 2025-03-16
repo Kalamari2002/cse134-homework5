@@ -2,6 +2,7 @@
     /*Button*/
     --button-toggle-width: 200px;
     --button-toggle-height:50px;
+    --button-z-index: 1;
 
     /*game card dimensions*/
     --desktop-game-width: 500px;

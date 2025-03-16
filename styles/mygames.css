@@ -80,6 +80,8 @@ button{
 
     width: var(--button-toggle-width);
     height: var(--button-toggle-height);
+
+    z-index: var(--button-z-index);
 }
 button:hover{
     cursor: pointer;
