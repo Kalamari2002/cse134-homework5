@@ -61,13 +61,9 @@ let req = new XMLHttpRequest();
 const data = JSON.stringify(allProjects);
 localStorage.setItem('projects', data);
 
-document.addEventListener("DOMContentLoaded", function(){
-    const localLoadButton = document.querySelector("#local-load");
+window.addEventListener("DOMContentLoaded", function(){
     const remoteLoadButton = document.querySelector("#remote-load");
     
-    //localLoadButton.onclick = function(){console.log("local load"); fetchFromLocal()};
-    //remoteLoadButton.onclick = function(){console.log("remote load"); fetchFromRemote()};
-
     req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
             remoteLoadButton.innerHTML = "Remote Load";
