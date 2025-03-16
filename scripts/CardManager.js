@@ -115,9 +115,11 @@ function populateCards(projects){
         projectThumb.setAttribute("game-src", currProject['game-src']);
         projectThumb.setAttribute("desktop-src", currProject['desktop-thumb']);
         projectThumb.setAttribute("mobile-src", currProject['mobile-thumb']);
+        projectThumb.querySelector("a").setAttribute("target", "_blank");
     
         projectInfo.setAttribute("game-title", currProject['game-title']);
         projectInfo.setAttribute("game-src", currProject['game-src']);
+        projectInfo.querySelector("a").setAttribute("target","_blank");
         description.innerHTML = currProject['game-description'];
         projectInfo.appendChild(description);
     }

@@ -33,8 +33,6 @@
     --page-title-font-family: MontserratExtraBold;
     --large-font-family: MontserratLight;
 
-    --nav-item-padding: 20px;
-
     --landscape-gallery-row-gap:4dvh;
     --gallery-default-col-gap:10dvw;
     --gallery-landscape-col-gap:6dvw;
@@ -53,7 +51,6 @@
     --paragraph-font-size: 24px;
     --mobile-paragraph-font-size: 20px;
     --mobile-footer-font-size: 18px;
-    --mobile-nav-font-size: 16px;
 
     --thumbnail-width-long: 450px;
 
@@ -63,12 +60,21 @@
     --desktop-game-width: 500px;
     --mobile-game-width: 350px;
 
+    /*nav*/
+    --mobile-nav-font-size: 16px;
+    --nav-item-padding: 20px;
+    --nav-transition-time: 0.5s;
+    --nav-width: 100%;
+    --nav-z-index: 1;
+
     /*toggle variables*/
     --slider-relative-size: 50%;
     --slider-border-width: 6px;
     --switch-width:100px;
     --switch-height:50px;
-    
+    --slider-position-offset: 50%;
+    --slider-width: 50%;
+
     --image-width-modifier: 0.9;
     --game-entry-padding-modifier: 0.05;
     
@@ -95,10 +101,34 @@ padding are both included in the width/height of an element*/
 }
 
 nav{
-    z-index: 1;
-    width: 100%;
+    z-index: var(--nav-z-index);
+    width: var(--nav-width);
     position:sticky;
     top:0;
+}
+    
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float:left;
+}
+
+nav li a {
+    display: block;
+    padding: var(--nav-item-padding);
+    background-color: var(--normal-font-color);
+    color: var(--background-color);
+    text-decoration: none;
+    transition: color var(--nav-transition-time);
+    transition: background-color var(--nav-transition-time);
+}
+nav li a:hover {
+    background-color: var(--background-color);
+    color: var(--normal-font-color);
 }
 
 body{
@@ -147,12 +177,12 @@ input:checked + .slider{
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 50%;
+    left: var(--slider-position-offset);
     right: 0;
     bottom: 0;
     background-color: var(--normal-font-color);
-    border: solid var(--background-color) 6px;
-    width: 50%;
+    border: solid var(--background-color) switch;
+    width: var(--slider-width);
 }
 
 p {
@@ -240,29 +270,6 @@ project-card a {
         background-color: var(--normal-font-color);
         font-size: var(--mobile-nav-font-size);
     }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
 
     footer{
         font-size: var(--mobile-footer-font-size);
@@ -320,29 +327,6 @@ project-card a {
         background-color: var(--normal-font-color);
         font-size: var(--mobile-nav-font-size);
     }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
 
     .introduction{
         display: flex;
@@ -398,32 +382,6 @@ project-card a {
         background-color: var(--normal-font-color);
         font-size: var(--paragraph-font-size);
     }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-        transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
-
     
     section:has(iframe){
         padding-bottom: var(--segment-margin-top);
@@ -502,31 +460,6 @@ project-card a {
         background-color: var(--normal-font-color);
         font-size: var(--paragraph-font-size);
     }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-        transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
 
     section:has(iframe){
         padding-bottom: var(--segment-margin-top);
@@ -603,5 +536,3 @@ project-card a {
         height: calc((var(--desktop-game-width) * var(--image-width-modifier))/1.8);
     }
 }
-
-
