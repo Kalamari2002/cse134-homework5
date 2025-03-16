@@ -61,7 +61,7 @@ let req = new XMLHttpRequest();
 const data = JSON.stringify(allProjects);
 localStorage.setItem('projects', data);
 
-window.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
     const localLoadButton = document.querySelector("#local-load");
     const remoteLoadButton = document.querySelector("#remote-load");
     
