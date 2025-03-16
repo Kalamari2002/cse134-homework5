@@ -1,70 +1,13 @@
-@font-face{
-    font-family: Quicksand;
-    src: url('../fonts/Quicksand/Quicksand-Regular.ttf');
-}
-@font-face{
-    font-family: Montserrat;
-    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
-}
-@font-face{
-    font-family: MontserratBoldItalic;
-    src: url('../fonts/Montserrat/static/Montserrat-BoldItalic.ttf');
-}
-@font-face{
-    font-family: MontserratExtraBold;
-    src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
-}
-@font-face{
-    font-family: MontserratLight;
-    src: url('../fonts/Montserrat/static/Montserrat-Light.ttf');
-}
 
+@import url("./variables/universal-variables.css");
 :root{
-    
-    --background-color: color-mix(in hsl, hsl(0, 8%, 15%), rgb(52, 51, 42) 35%);
-    --game-entry-background-color: color(display-p3 0.27 0.25 0.23);
-    --normal-font-color: rgb(238, 236, 207);
-    --link-font-color: rgb(175, 232, 213);
-    --footer-background-color: rgb(99, 99, 99);
-    --invalid-color:rgb(236, 149, 149);
-
-    --paragraph-font-family: Quicksand;
-    --seg-title-font-family: MontserratBoldItalic;
-    --page-title-font-family: MontserratExtraBold;
-    --large-font-family: MontserratLight;
-
+    /*items*/
     --item-margin-bottom: 4%;
-    --segment-margin-top:2%;
-    --default-gap:2%;
 
-    --page-title-font-size: 46px;
-    --seg-title-font-size: 36px;
-    --game-title-font-size:28px;
-    --paragraph-font-size: 24px;
-    --mobile-paragraph-font-size: 20px;
-    --mobile-footer-font-size: 18px;
-
-    /*nav*/
-    --mobile-nav-font-size: 16px;
-    --nav-item-padding: 20px;
-    --nav-transition-time: 0.5s;
-    --nav-width: 100%;
-    --nav-z-index: 1;
-
-    /*toggle variables*/
-    --slider-relative-size: 50%;
-    --slider-width: 50%;
-    --slider-position-offset: 50%;
-    --slider-border-width: 6px;
-    --switch-width:100px;
-    --switch-height:50px;
-        
+    /*text widths*/
     --long-text-width: 75ch;
     --medium-text-width: 50ch;
     --short-text-width: 25ch;
-
-    --fade-in-default-time: 2s;
-    --introduction-animation-delay: 1.2s;
 }
 
 @keyframes fade-in {

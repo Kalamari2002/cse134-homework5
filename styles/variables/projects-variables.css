@@ -1,0 +1,20 @@
+:root{
+    /*Button*/
+    --button-toggle-width: 200px;
+    --button-toggle-height:50px;
+
+    /*game card dimensions*/
+    --desktop-game-width: 500px;
+    --mobile-game-width: 350px;
+    --mobile-game-margin-top:10%;
+    --image-width-modifier: 0.9;
+    --game-entry-padding-modifier: 0.05;
+
+    /*gallery*/
+    --landscape-gallery-row-gap:4dvh;
+    --gallery-default-col-gap:10dvw;
+    --gallery-landscape-col-gap:6dvw;
+
+    /*animation*/
+    --zoomin-scale : 1.1;
+}

@@ -3,7 +3,9 @@ class ModeToggle extends HTMLElement{
     static moonIconLight = "./images/icons/moon_icon_lightmode.png";
     static sunIconDark = "./images/icons/sun_icon_darkmode.png";
     static sunIconLight = "./images/icons/sun_icon_lightmode.png";
-    static observedAttributes = ['light-src','dark-src'];
+
+    static darkColorPalette = "./styles/variables/dark-color-palette.css";
+    static lightColorPalette = "./styles/variables/light-color-palette.css";
     
     constructor(){
         super();
@@ -22,14 +24,6 @@ class ModeToggle extends HTMLElement{
         <img src="${ModeToggle.sunIconDark}" alt="sun-icon" width="50px">
     </span>`
         this.determineInitialMode();
-    }
-
-    attributeChangedCallback(name, oldValue, newValue){
-        if(name=="light-src"){
-            this.lightStyleSrc = newValue;
-        }else if(name=="dark-src"){
-            this.darkStyleSrc = newValue;
-        }
     }
 
     determineInitialMode(){
@@ -65,12 +59,12 @@ class ModeToggle extends HTMLElement{
 
     switchToLightMode(){
         console.log("LIGHT MODE");
-        const styleLink = document.querySelector("link");
+        const styleLink = document.getElementById("color-palette");
         const toggleIcons = this.querySelectorAll("img");
         const moonIcon = toggleIcons[0];
         const sunIcon = toggleIcons[1];
 
-        styleLink.href = this.lightStyleSrc;
+        styleLink.href = ModeToggle.lightColorPalette;
         localStorage.setItem('ToggleMode', 'light');
         moonIcon.src = ModeToggle.moonIconLight;
         sunIcon.src = ModeToggle.sunIconLight;
@@ -78,12 +72,12 @@ class ModeToggle extends HTMLElement{
     
     switchToDarkMode(){
         console.log("DARK MODE");
-        const styleLink = document.querySelector("link");
+        const styleLink = document.getElementById("color-palette");
         const toggleIcons = this.querySelectorAll("img");
         const moonIcon = toggleIcons[0];
         const sunIcon = toggleIcons[1];
 
-        styleLink.href = this.darkStyleSrc;
+        styleLink.href = ModeToggle.darkColorPalette;
         localStorage.setItem('ToggleMode', 'dark');
         moonIcon.src = ModeToggle.moonIconDark;
         sunIcon.src = ModeToggle.sunIconDark;

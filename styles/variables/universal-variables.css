@@ -1,0 +1,61 @@
+@font-face{
+    font-family: Quicksand;
+    src: url('../../fonts/Quicksand/Quicksand-Regular.ttf');
+}
+@font-face{
+    font-family: Montserrat;
+    src: url('../../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+@font-face{
+    font-family: MontserratBoldItalic;
+    src: url('../../fonts/Montserrat/static/Montserrat-BoldItalic.ttf');
+}
+@font-face{
+    font-family: MontserratExtraBold;
+    src: url('../../fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+}
+@font-face{
+    font-family: MontserratLight;
+    src: url('../../fonts/Montserrat/static/Montserrat-Light.ttf');
+}
+
+:root{
+    /*fonts*/
+    --paragraph-font-family: Quicksand;
+    --seg-title-font-family: MontserratBoldItalic;
+    --page-title-font-family: MontserratExtraBold;
+    --large-font-family: MontserratLight;
+
+    /*nav*/
+    --mobile-nav-font-size: 16px;
+    --nav-item-padding: 20px;
+    --nav-transition-time: 0.5s;
+    --nav-width: 100%;
+    --nav-z-index: 1;
+
+    /*toggle variables*/
+    --slider-relative-size: 50%;
+    --slider-width: 50%;
+    --slider-position-offset: 50%;
+    --slider-border-width: 6px;
+    --switch-width:100px;
+    --switch-height:50px;
+
+    /*general font sizes*/
+    --page-title-font-size: 46px;
+    --seg-title-font-size: 36px;
+    --large-font-size: 32px;
+    --game-title-font-size:28px;
+    --paragraph-font-size: 24px;
+    --mobile-paragraph-font-size: 20px;
+    --mobile-footer-font-size: 18px;
+
+    /*general margins/gaps*/
+    --segment-margin-top:1%;
+    --default-gap:2%;
+
+    /*animation*/
+    --fade-in-default-time: 2s;
+    --quick-transition-time: 0.5s;
+    --introduction-animation-delay: 1.2s;
+}
