@@ -33,11 +33,6 @@
     --page-title-font-family: MontserratExtraBold;
     --large-font-family: MontserratLight;
 
-    --landscape-gallery-row-gap:4dvh;
-    --gallery-default-col-gap:10dvw;
-    --gallery-landscape-col-gap:6dvw;
-
-    --mobile-game-margin-top:10%;
     --item-margin-bottom: 4%;
     --segment-margin-top:2%;
     --default-gap:2%;
@@ -49,9 +44,6 @@
     --mobile-paragraph-font-size: 20px;
     --mobile-footer-font-size: 18px;
 
-    --desktop-game-width: 500px;
-    --mobile-game-width: 350px;
-
     /*nav*/
     --mobile-nav-font-size: 16px;
     --nav-item-padding: 20px;
@@ -61,23 +53,18 @@
 
     /*toggle variables*/
     --slider-relative-size: 50%;
+    --slider-width: 50%;
+    --slider-position-offset: 50%;
     --slider-border-width: 6px;
     --switch-width:100px;
     --switch-height:50px;
-
-    --image-width-modifier: 0.9;
-    --game-entry-padding-modifier: 0.05;
-    
+        
     --long-text-width: 75ch;
     --medium-text-width: 50ch;
-    --latest-text-width: 30ch;
     --short-text-width: 25ch;
 
     --fade-in-default-time: 2s;
     --introduction-animation-delay: 1.2s;
-    --quick-transition-time: 0.5s;
-
-    --zoomin-scale : 1.1;
 }
 
 @keyframes fade-in {
@@ -160,12 +147,12 @@ input:checked + .slider{
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 50%;
+    left: var(--slider-position-offset);
     right: 0;
     bottom: 0;
     background-color: var(--normal-font-color);
-    border: solid var(--background-color) 6px;
-    width: 50%;
+    border: solid var(--background-color) var(--slider-border-width);
+    width: var(--slider-width);
 }
 
 p {
