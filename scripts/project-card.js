@@ -11,7 +11,7 @@ class ProjectInfo extends HTMLElement{
             this.gameTitle = "Press buttons above to load";
         }
         if(!(this.gameSource = this.parentElement.getAttribute("game-src"))){
-            this.gameSource = "";
+            this.gameSource = "#local-load";
         }
 
         this.innerHTML = `
