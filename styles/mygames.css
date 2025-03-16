@@ -38,7 +38,7 @@
     --gallery-landscape-col-gap:6dvw;
 
     --mobile-game-margin-top:10%;
-    --segment-margin-top:4%;
+    --segment-margin-top:1%;
     --default-gap:2%;
 
     --page-title-font-size: 46px;
@@ -49,6 +49,10 @@
 
     --desktop-game-width: 500px;
     --mobile-game-width: 350px;
+    
+    /*Button*/
+    --button-toggle-width: 200px;
+    --button-toggle-height:50px;
 
     /*nav*/
     --mobile-nav-font-size: 16px;
@@ -140,6 +144,24 @@ h3{
     font-size: var(--game-title-font-size);
 }
 
+button{
+    background-color: var(--background-color);
+    
+    border: solid var(--normal-font-color);
+
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-family);
+    color: var(--normal-font-color);
+
+    margin-top: var(--default-gap);
+
+    width: var(--button-toggle-width);
+    height: var(--button-toggle-height);
+}
+button:hover{
+    cursor: pointer;
+}
+
 noscript{
     color:var(--invalid-color)
 }
@@ -204,13 +226,13 @@ footer a{
     margin-top: var(--segment-margin-top);
 }
 
-.game-entry{
+project-card{
     background-color: var(--game-entry-background-color);
     display: flex;
     flex-direction: column;
 }
 
-.game-entry > a {
+project-card a {
     align-self: center;
 }
 
@@ -232,12 +254,12 @@ footer a{
         align-items: center;
     }
 
-    .game-entry {
+    project-card {
         margin-top: var(--mobile-game-margin-top);
         width: var(--mobile-game-width);
         padding: calc(var(--mobile-game-width) * var(--game-entry-padding-modifier));
     }
-    .game-entry > a picture img{
+    project-card img{
         width: calc(var(--mobile-game-width) * var(--image-width-modifier));
         height: calc(var(--mobile-game-width) * var(--image-width-modifier));
     }
@@ -256,12 +278,12 @@ footer a{
         align-items: center;
     }
 
-    .game-entry {
+    project-card {
         margin-top: var(--mobile-game-margin-top);
         width: var(--mobile-game-width);
         padding: calc(var(--mobile-game-width) * var(--game-entry-padding-modifier));
     }
-    .game-entry > a picture img{
+    project-card img{
         width: calc(var(--mobile-game-width) * var(--image-width-modifier));
         height: calc(var(--mobile-game-width) * var(--image-width-modifier));
     }
@@ -291,11 +313,11 @@ footer a{
         grid-template-columns: auto auto auto;
     }
 
-    .game-entry{
+    project-card{
         width: var(--desktop-game-width);
         padding: calc(var(--desktop-game-width) * var(--game-entry-padding-modifier));
     }
-    .game-entry > a picture img{
+    project-card img{
         width: calc(var(--desktop-game-width) * var(--image-width-modifier));
     }
 }
@@ -324,16 +346,16 @@ footer a{
         grid-template-columns: auto auto auto;
     }
 
-    .game-entry{
+    project-card{
         width: var(--desktop-game-width);
         padding: calc(var(--desktop-game-width) * var(--game-entry-padding-modifier));
         transform: scale(1,1);
         transition: transform var(--quick-transition-time);
     }
-    .game-entry:hover{
+    project-card:hover{
         transform: scale(var(--zoomin-scale),var(--zoomin-scale));
     }
-    .game-entry > a picture img{
+    project-card img{
         width: calc(var(--desktop-game-width) * var(--image-width-modifier));
         height: calc((var(--desktop-game-width) * var(--image-width-modifier))/1.8);
     }
