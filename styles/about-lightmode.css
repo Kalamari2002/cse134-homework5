@@ -26,13 +26,12 @@
     --normal-font-color: color-mix(in hsl, hsl(0, 8%, 15%), rgb(52, 51, 42) 35%);
     --link-font-color: rgb(164, 107, 38);
     --footer-background-color: rgb(225, 221, 178);
+    --invalid-color:rgb(236, 149, 149);
 
     --paragraph-font-family: Quicksand;
     --seg-title-font-family: MontserratBoldItalic;
     --page-title-font-family: MontserratExtraBold;
     --large-font-family: MontserratLight;
-
-    --nav-item-padding: 20px;
 
     --landscape-gallery-row-gap:4dvh;
     --gallery-default-col-gap:10dvw;
@@ -49,10 +48,16 @@
     --paragraph-font-size: 24px;
     --mobile-paragraph-font-size: 20px;
     --mobile-footer-font-size: 18px;
-    --mobile-nav-font-size: 16px;
 
     --desktop-game-width: 500px;
     --mobile-game-width: 350px;
+
+    /*nav*/
+    --mobile-nav-font-size: 16px;
+    --nav-item-padding: 20px;
+    --nav-transition-time: 0.5s;
+    --nav-width: 100%;
+    --nav-z-index: 1;
 
     /*toggle variables*/
     --slider-relative-size: 50%;
@@ -92,6 +97,37 @@ padding are both included in the width/height of an element*/
     -border-style: solid;
 }
 
+nav{
+    z-index: var(--nav-z-index);
+    width: var(--nav-width);
+    position:sticky;
+    top:0;
+}
+    
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float:left;
+}
+
+nav li a {
+    display: block;
+    padding: var(--nav-item-padding);
+    background-color: var(--normal-font-color);
+    color: var(--background-color);
+    text-decoration: none;
+    transition: color var(--nav-transition-time);
+    transition: background-color var(--nav-transition-time);
+}
+nav li a:hover {
+    background-color: var(--background-color);
+    color: var(--normal-font-color);
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -116,29 +152,10 @@ h3{
     font-size: var(--game-title-font-size);
 }
 
-.switch{
-    width: var(--switch-width);
-    height:var(--switch-height);
-    position:relative;
-    display: inline-block;
-    border-style: solid;
+noscript{
+    color:var(--invalid-color)
 }
-.switch input{
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider{
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--normal-font-color);
-    border: solid var(--background-color) var(--slider-border-width);
-    width: var(--slider-relative-size);
-}
+
 input:checked + .slider{
     position: absolute;
     cursor: pointer;
@@ -176,35 +193,36 @@ section{
     margin-top: var(--segment-margin-top);
 }
 
+.switch{
+    width: var(--switch-width);
+    height:var(--switch-height);
+    position:relative;
+    display: inline-block;
+    border-style: solid;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--normal-font-color);
+    border: solid var(--background-color) var(--slider-border-width);
+    width: var(--slider-relative-size);
+}
+
 /*Smaller phones*/
 @media screen and (max-width: 500px){
     nav {
         display: flex;
         background-color: var(--normal-font-color);
         font-size: var(--mobile-nav-font-size);
-    }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
     }
 
     footer{
@@ -234,29 +252,6 @@ section{
         background-color: var(--normal-font-color);
         font-size: var(--mobile-nav-font-size);
     }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
-    }
 
     footer{
         font-size: var(--mobile-footer-font-size);
@@ -284,31 +279,6 @@ section{
         display: flex;
         background-color: var(--normal-font-color);
         font-size: var(--paragraph-font-size);
-    }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-        transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
     }
 
     .introduction > p{
@@ -339,31 +309,6 @@ section{
         display: flex;
         background-color: var(--normal-font-color);
         font-size: var(--paragraph-font-size);
-    }
-    
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav li {
-        float:left;
-    }
-    
-    nav li a {
-        display: block;
-        padding: var(--nav-item-padding);
-        background-color: var(--normal-font-color);
-        color: var(--background-color);
-        text-decoration: none;
-        transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
-    
-    nav li a:hover {
-        background-color: var(--background-color);
-        color: var(--normal-font-color);
     }
 
     footer{
